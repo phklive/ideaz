@@ -17,6 +17,11 @@ const Home: NextPage = () => {
         />
       </Head>
       <LandingHeader />
+      <div className="flex flex-row justify-center items-center">
+        <button className="text-3xl border border-black rounded-full px-4 py-2 hover:text-blue-500">
+          Build the future!
+        </button>
+      </div>
     </div>
   );
 };
