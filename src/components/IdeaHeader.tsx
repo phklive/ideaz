@@ -4,7 +4,7 @@ import React from "react";
 const IdeaHeader = () => {
   return (
     <div>
-      <div className="grid grid-cols-2 items-center justify-center h-screen">
+      <div className="grid grid-cols-2 items-center justify-center">
         <h1 className="text-center text-6xl">
           Bringing the best{" "}
           <span className="font-bold block text-8xl">Ideaz</span> on the Tezos

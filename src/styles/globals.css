@@ -2,22 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
-}
-
 body {
-  background-color: #e5e5e5;
   font-family: "Questrial", sans-serif;
+  background-color: #e5e5e5;
 }
 
 .flying {
