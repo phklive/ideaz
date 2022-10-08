@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: "Questrial", sans-serif;
+}
+
 .flying {
   animation: flying 3.5s ease-in-out infinite;
-  width: 400px;
-  margin: 0 auto;
-  position: relative;
-  top: -50px;
 }
 
 @keyframes flying {
@@ -21,4 +21,8 @@
   to {
     transform: translate(0, 0px);
   }
+}
+
+#__next {
+  background-color: #e5e5e5;
 }
