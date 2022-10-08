@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { AiOutlineArrowDown } from "react-icons/ai";
 
-const LandingHeader = () => {
+const LearnHeader = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center">
@@ -12,10 +12,12 @@ const LandingHeader = () => {
               <Image src={"/logo.png"} height={228} width={400} />
               <div className="flex flex-col items-center justify-center gap-8">
                 <h1 className="text-center text-5xl font-normal mt-8">
-                  Matching best{" "}
-                  <span className="font-bold underline">Projects</span> 🚀{" "}
-                  <br /> with best{" "}
-                  <span className="font-bold underline">Builders</span> 👷🏽‍♂️
+                  <span className="font-bold underline">Learn</span>,{" "}
+                  <span className="font-bold underline">Obtain</span>{" "}
+                  certifications, <br /> and{" "}
+                  <span className="font-bold underlfine">create</span> the best
+                  projects <br />
+                  on Tezos
                 </h1>
                 <button className="text-3xl border border-black rounded-full px-4 py-2 hover:text-blue-500">
                   Build the future!
@@ -24,7 +26,7 @@ const LandingHeader = () => {
             </div>
             <div>
               <Image
-                src="/flying.png"
+                src="/builder.png"
                 alt="flying illustration"
                 className="flying"
                 width={600}
@@ -41,4 +43,4 @@ const LandingHeader = () => {
   );
 };
 
-export default LandingHeader;
+export default LearnHeader;

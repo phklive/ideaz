@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         />
       </Head>
       <LandingHeader />
-      <div className="flex flex-col justify-center items-center gap-4">
+      <div className="flex flex-col justify-center items-center gap-4 pt-8" id="home">
         <span className="text-3xl text-center">
           Bringing the next BILLION users on Tezos
         </span>

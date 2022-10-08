@@ -23,7 +23,9 @@ const IdeaHeader = () => {
           </div>
         </div>
       </div>
-      <AiOutlineArrowDown className="my-0 mx-auto text-6xl mt-8 arrowDown" />
+      <a href="#ideaz">
+        <AiOutlineArrowDown className="my-0 mx-auto text-6xl mt-8 arrowDown" />
+      </a>
     </div>
   );
 };
