@@ -34,7 +34,7 @@ const LearnHeader = () => {
               />
             </div>
           </div>
-          <a href="#home">
+          <a href="#courses">
             <AiOutlineArrowDown className="my-0 mx-auto text-6xl mt-8 arrowDown" />
           </a>
         </div>
