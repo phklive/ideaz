@@ -3,13 +3,15 @@ import React from "react";
 
 const LearnHeader = () => {
   return (
-    <div>
-      <Image
-        src={"/opentezos.jpg"}
-        alt="Open tezos"
-        width={2000}
-        height={500}
-      />
+    <div className="flex flex-row items-center justify-center">
+      <a href="https://opentezos.com/">
+        <Image
+          src={"/opentezos.png"}
+          alt="Open tezos"
+          width={800}
+          height={200}
+        />
+      </a>
     </div>
   );
 };
