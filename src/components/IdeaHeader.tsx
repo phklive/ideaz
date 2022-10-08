@@ -3,7 +3,7 @@ import React from "react";
 
 const IdeaHeader = () => {
   return (
-    <div>
+    <div className="grid items-center h-screen">
       <div className="grid grid-cols-2 items-center justify-center">
         <h1 className="text-center text-6xl">
           Bringing the best{" "}
