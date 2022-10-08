@@ -4,6 +4,7 @@
 
 body {
   font-family: "Questrial", sans-serif;
+  background-color: #e5e5e5;
 }
 
 .flying {
@@ -21,8 +22,4 @@ body {
   to {
     transform: translate(0, 0px);
   }
-}
-
-#__next {
-  background-color: #e5e5e5;
 }
