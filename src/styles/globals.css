@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.flying {
+  animation: flying 3.5s ease-in-out infinite;
+  width: 400px;
+  margin: 0 auto;
+  position: relative;
+  top: -50px;
+}
+
+@keyframes flying {
+  from {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(10px, -10px) rotate(3deg);
+    opacity: 0.9;
+  }
+  to {
+    transform: translate(0, 0px);
+  }
+}
