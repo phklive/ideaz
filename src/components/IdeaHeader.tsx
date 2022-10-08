@@ -3,14 +3,19 @@ import React from "react";
 
 const IdeaHeader = () => {
   return (
-    <div>
-      <div className="grid grid-cols-2 items-center justify-center">
-        <h1 className="text-center text-6xl">
-          Bringing the best{" "}
-          <span className="font-bold block text-8xl">Ideaz</span> on the Tezos
-          blockchain
-        </h1>
-        <Image src="/idea.png" alt="Idea man" width={400} height={500} />
+    <div className="grid items-center h-screen">
+      <div className="flex flex-row flex-1 items-center justify-center">
+        <Image
+          className="flying"
+          src="/idea.png"
+          alt="Idea man"
+          width={500}
+          height={500}
+        />
+        <div className="flex flex-col justify-center items-center text-center text-6xl">
+          Bringing the best <Image src={"/logo.png"} height={171} width={300} />{" "}
+          on the Tezos blockchain
+        </div>
       </div>
     </div>
   );
