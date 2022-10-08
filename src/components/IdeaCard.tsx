@@ -4,7 +4,7 @@ import { idea } from "../utils/ideaz";
 
 const IdeaCard: React.FC<idea> = ({ category, desc, image, raised, title }) => {
   return (
-    <div className="flex flex-col shadow-xl rounded">
+    <div className="flex flex-col shadow-xl rounded bg-gray-100">
       <div className="rounded">
         <Image
           src={image}
