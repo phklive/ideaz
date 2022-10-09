@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { AiOutlineArrowDown } from "react-icons/ai";
 import LandingHeader from "../components/LandingHeader";
 import Users from "../components/Users";
 
@@ -17,7 +18,11 @@ const Home: NextPage = () => {
         />
       </Head>
       <LandingHeader />
-      
+      <div className="flex flex-col justify-center items-center gap-4 pt-8" id="home">
+        <span className="text-3xl text-center">
+          Bringing the next BILLION users on Tezos
+        </span>
+      </div>
     </div>
   );
 };

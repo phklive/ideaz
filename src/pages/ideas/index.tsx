@@ -7,7 +7,7 @@ const Ideas = () => {
   return (
     <>
       <IdeaHeader />
-      <div className="grid grid-cols-3 justify-center gap-8">
+      <div className="grid grid-cols-3 justify-center gap-8" id="ideaz">
         {ideaz.map((idea) => (
           <IdeaCard
             category={idea.category}

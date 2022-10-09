@@ -36,3 +36,27 @@ body {
     transform: translate(0, 0px);
   }
 }
+
+#ideaz,
+#courses {
+  padding-top: 2rem;
+}
+
+.arrowDown {
+  transform: translateY(0);
+  transition: transform 0.4s ease-out;
+}
+
+.arrowDown:hover {
+  transform: translateY(15px);
+}
+
+.course {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.line {
+  width: 1px;
+  height: 100px;
+  background-color: #111;
+}
