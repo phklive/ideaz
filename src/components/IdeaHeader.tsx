@@ -1,11 +1,12 @@
 import Image from "next/image";
 import React from "react";
+import LoginButton from "./LoginButton";
 import { AiOutlineArrowDown } from "react-icons/ai";
 
 const IdeaHeader = () => {
   return (
-    <div className="flex flex-col items-center justify-evenly h-screen">
-      <div className="flex flex-row">
+    <div className="flex flex-col items-center justify-center h-screen">
+      <div className="flex flex-row mt-20">
         <div>
           <Image
             className="flying"
