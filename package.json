@@ -10,6 +10,7 @@
     "@taquito/beacon-wallet": "^14.0.0",
     "@taquito/remote-signer": "^14.0.0",
     "@taquito/taquito": "^14.0.0",
+    "@taquito/utils": "^14.0.0",
     "next": "latest",
     "pnpm": "^7.13.2",
     "react": "18.1.0",
