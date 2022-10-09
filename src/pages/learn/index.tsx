@@ -16,9 +16,9 @@ export default function Learn() {
         </div>
         <div className="grid gap-16">
           {courses.map((course) => (
-            <div className="rounded bg-gray-90 course">
+            <div className="rounded course">
               <Link href={`/learn/${course.id - 1}`} key={course.id}>
-                <div className="grid grid-cols-3 items-center text-center px-10 py-14 cursor-pointer">
+                <div className="grid grid-cols-3 items-center text-center px-10 py-14 rounded cursor-pointer">
                   <h3 className="text-2xl">{course.name}</h3>
                   <p>{course.description}</p>
                   <div>
