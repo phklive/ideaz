@@ -21,7 +21,9 @@ const IdeaCard: React.FC<idea> = ({ category, desc, image, raised, title }) => {
           <p className="text-lg mt-4">{desc}</p>
         </div>
         <div className="mt-6">
-          <h2 className="ml-4 text-lg">{raised} TZX Raised</h2>
+          <h2 className="ml-4 text-lg">
+            {raised} XTZ <em className="text-sm">Raised</em>
+          </h2>
           <div className="bg-green-500 h-3 rounded-full border border-black w-11/12 mx-auto mb-2" />
         </div>
       </div>

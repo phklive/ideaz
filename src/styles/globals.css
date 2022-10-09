@@ -18,11 +18,17 @@
 body {
   font-family: "Questrial", sans-serif;
   background-color: #e5e5e5;
-  background: rgb(238, 174, 202);
+  /* background: rgb(238, 174, 202);
   background: radial-gradient(
     circle,
     rgba(238, 174, 202, 1) 0%,
     rgba(148, 187, 233, 1) 100%
+  ); */
+  background: rgb(238, 202, 218);
+  background: radial-gradient(
+    circle,
+    rgba(238, 202, 218, 1) 0%,
+    rgba(172, 200, 233, 1) 100%
   );
 }
 
