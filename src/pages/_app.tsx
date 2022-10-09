@@ -6,16 +6,16 @@ import TezosContext from "../utils/context";
 import { beaconWallet } from "../utils/tezos";
 
 function MyApp({ Component, pageProps }: AppProps) {
-    const [wallet, setWallet] = useState(beaconWallet);
+  const [wallet, setWallet] = useState(beaconWallet);
 
-    return (
-        <TezosContext.Provider value={wallet}>
-            <div className="w-11/12 mx-auto mb-10">
-                <Navbar />
-                <Component {...pageProps} />
-            </div>
-        </TezosContext.Provider>
-    );
+  return (
+    <TezosContext.Provider value={wallet}>
+      <div className="w-11/12 mx-auto mb-10">
+        <Navbar />
+        <Component {...pageProps} />
+      </div>
+    </TezosContext.Provider>
+  );
 }
 
 export default MyApp;

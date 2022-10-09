@@ -11,13 +11,19 @@
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 0;
   background: transparent;
 }
 
 body {
   font-family: "Questrial", sans-serif;
   background-color: #e5e5e5;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
 }
 
 .flying {
@@ -37,6 +43,10 @@ body {
   }
 }
 
+#home {
+  min-height: 100vh;
+}
+
 #ideaz,
 #courses {
   padding-top: 2rem;
@@ -54,8 +64,6 @@ body {
 .course {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
-
-
 
 @keyframes topDown {
   from {
