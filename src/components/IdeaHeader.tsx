@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import LoginButton from "./LoginButton";
 
 const IdeaHeader = () => {
   return (
@@ -16,6 +17,7 @@ const IdeaHeader = () => {
           Bringing the best <Image src={"/logo.png"} height={171} width={300} />{" "}
           on the Tezos blockchain
         </div>
+        <LoginButton />
       </div>
     </div>
   );

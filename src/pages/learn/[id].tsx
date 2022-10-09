@@ -48,7 +48,7 @@ const Course = () => {
                 ))}
             </div>
             <button onClick={() => checkAnswers()}>Submit</button>
-            {valid && valid ? "Correct" : "Incorrect"}
+            {valid !== undefined && (valid ? "Correct" : "Incorrect")}
         </div>
     );
 };
