@@ -33,9 +33,9 @@ const Course = () => {
           Documentation <AiOutlineLink />
         </a>
       </div>
-      <div className="flex flex-row flex-wrap gap-12 justify-start align-center">
+      <div className="grid grid-cols-2 gap-12 justify-start align-center mb-8">
         {course.questions.map((question, i) => (
-          <div key={i} className="flex flex-col course p-4 rounded">
+          <div key={i} className="flex flex-col course p-4 rounded shadow-xl">
             <h3 className="mb-2">{question.question}</h3>
             {question.answers.concat(question.wrongAnswers).map((answer, j) => (
               <div key={j}>
@@ -60,9 +60,13 @@ const Course = () => {
         </button>
 
         {valid && valid ? (
-          <div className="rounded px-3 py-1 mx-auto my-0 text-green-600">Correct</div>
+          <div className="rounded px-3 py-1 mx-auto my-0 text-green-600">
+            Correct
+          </div>
         ) : (
-            <div className="rounded px-3 py-1 mx-auto my-0 text-red-600">Incorrect</div>
+          <div className="rounded px-3 py-1 mx-auto my-0 text-red-600">
+            Incorrect
+          </div>
         )}
       </div>
     </div>
