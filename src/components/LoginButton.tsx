@@ -1,4 +1,4 @@
-import { AccountInfo } from "@airgap/beacon-types";
+import { AccountInfo, NetworkType } from "@airgap/beacon-types";
 import React, { useContext, useEffect, useState } from "react";
 import TezosContext from "../utils/context";
 
@@ -6,22 +6,32 @@ export default function LoginButton() {
     const [account, setAccount] = useState<AccountInfo>();
     const context = useContext(TezosContext);
 
-    useEffect(() => {
-        context.client.getActiveAccount().then((acc) => {
+    const connect = async () => {
+        context.client.getActiveAccount().then(async (acc) => {
             if (acc) setAccount(acc);
+            else
+                await context
+                    .requestPermissions({
+                        // network: {
+                        //     type: NetworkType.GRANADANET,
+                        //     rpcUrl: "https://granadanet.smartpy.io",
+                        // },
+                    })
+                    .then(() => connect());
         });
-    }, []);
+    };
+
+    // useEffect(() => {
+    //     connect();
+    // }, []);
 
     const handleLogin = () => {
-        // if (!isLoggedIn) {
-        //     getActiveAccount().then((account) => {
-        //         setIsLoggedIn(true);
-        //         console.log(account);
-        //     });
-        // } else {
-        //     clearActiveAccount();
-        //     setIsLoggedIn(false);
-        // }
+        if (account) {
+            context.client.clearActiveAccount();
+            setAccount(undefined);
+        } else {
+            connect();
+        }
     };
 
     return (

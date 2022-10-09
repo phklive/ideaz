@@ -10,7 +10,7 @@ const Navbar = () => {
       <div className="flex flex-row items-center justify-center gap-20 self-center">
         <Link href="/">Home</Link>
         <Link href="/ideas">Ideas</Link>
-        <Link href="/learn">Learn</Link>
+        <Link href="/learn">Learn</Link> 
       </div>
       <div className="flex absolute right-5 gap-8 text-xl">
         <LoginButton />
