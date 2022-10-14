@@ -1,0 +1,87 @@
+import smartpy as sp
+import time
+
+class Crowdfunding(sp.Contract):
+    def __init__(self, owner, maxTime):
+        self.init(
+            owner = owner,
+            contributedAmount = sp.tez(0),
+            funding=sp.map(tkey=sp.TAddress, tvalue=None),
+            maxTime=maxTime
+        )
+
+    @sp.entry_point
+    def finance(self):
+        # Verify if the user votes for himself
+        sp.verify(sp.sender != self.data.owner)
+        # Verify if the project is outdated
+        sp.verify(sp.now <= self.data.maxTime)
+        # Verify if the user already financed this project
+        sp.if self.data.funding.contains(sp.sender):
+            self.data.funding[sp.sender] += sp.amount
+        sp.if ~self.data.funding.contains(sp.sender):
+            self.data.funding[sp.sender] = sp.amount
+        self.data.contributedAmount += sp.amount
+
+    @sp.entry_point
+    def withdraw(self):
+        sp.verify(sp.sender == self.data.owner)
+        sp.verify(sp.now >= self.data.maxTime)
+        sp.send(self.data.owner, self.data.contributedAmount)
+
+    @sp.entry_point
+    def refund(self):
+        sp.verify(self.data.funding.contains(sp.sender))
+        sp.verify(sp.now > self.data.maxTime)
+        sp.send(sp.sender, self.data.funding[sp.sender])
+        del self.data.funding[sp.sender]
+
+@sp.add_test(name = "successful Crowdfunding")
+def successful():
+
+    # dummy addresses
+    owner= sp.address("tz1xowner")
+    user1= sp.address("tz1xuser1")
+    user2= sp.address("tz1xuser2")
+    user3= sp.address("tz1xuser3")
+
+    contract = Crowdfunding(
+        owner,
+        sp.timestamp(int(time.time()) + 259200)
+    )
+    scenario = sp.test_scenario()
+    scenario+= contract
+
+    scenario+= contract.finance().run(
+        sender=user1, 
+        amount=sp.tez(10), 
+        now=sp.timestamp(int(time.time())+100)
+    )
+
+    scenario+= contract.finance().run(
+        sender=user2, 
+        amount=sp.tez(8), 
+        now = sp.timestamp(int(time.time())+200)
+    )
+
+    # will fail because deadline has been reached
+    scenario += contract.finance().run(
+        sender=user1, 
+        amount=sp.tez(12), 
+        now = sp.timestamp(int(time.time())+259201), 
+        valid = False
+    )
+
+    # will fail because 2 tez missing
+    scenario += contract.withdraw().run(sender=owner, 
+    now = sp.timestamp(int(time.time())+300), valid = False)
+
+    scenario += contract.finance().run(sender=user3, 
+    amount=sp.tez(15), now = sp.timestamp(int(time.time())+400))
+
+    # will fail because deadline not reached
+    scenario += contract.withdraw().run(sender=owner, 
+    now = sp.timestamp(int(time.time())+500), valid = False)
+
+    scenario += contract.withdraw().run(sender=owner, 
+    now = sp.timestamp(int(time.time())+259200))
